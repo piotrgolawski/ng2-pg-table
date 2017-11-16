@@ -1,0 +1,28 @@
+<table class="ng2-pg-table table table-bordered table-hover" [id]="tableId">
+
+    <thead>
+        <tr>
+            <th table-search *ngFor="let column of config['columns']" [column]="column" [items]="localDataCopy" [filterPlaceholder]="config.globalSettings.filterPlaceholder"
+                [tableBroadcaster]="tableBroadcaster"></th>
+        </tr>
+        <tr>
+            <th table-column *ngFor="let column of config['columns']" [modelColumnName]="column.name" [objectPath]="column.objectPath" [items]="data" [tableBroadcaster]="tableBroadcaster"></th>
+        </tr>
+    </thead>
+
+    <tbody *ngIf="dataToShow != null" (mouseleave)="hideFloatingMenu()">
+        <tr table-row *ngFor="let entity of dataToShow" [tableNumber]="tableNumber" [item]="entity" [class.selected]="entity['selected']" [tableBroadcaster]="tableBroadcaster" [floatingMenuId]="floatingMenuId">
+            <td table-cell *ngFor="let column of config.columns" [item]="entity" [objectPath]="column.objectPath"></td>
+        </tr>
+        <table-floating-menu class="table-floating-menu" [id]="floatingMenuId" [components]="config.floatingButtonsComponents" [tableBroadcaster]="tableBroadcaster"></table-floating-menu>
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td [attr.colspan]="config.columns.length">
+                <table-pagination (itemsPaged)="updateDataToShow($event)" [items]="data" [paginationLimit]="paginationLimit" [tableBroadcaster]="tableBroadcaster"></table-pagination>
+            </td>
+        </tr>
+    </tfoot>
+
+</table>
