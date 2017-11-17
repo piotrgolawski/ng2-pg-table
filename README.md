@@ -7,7 +7,8 @@ At this moment of development it may be not wise to use in production. I will be
 * pagination
 * sorting
 * filtering 
-
+* floating buttons (injected components)
+* access to table events
 
 
 ### Instalation
@@ -26,7 +27,6 @@ simply copy-paste github repo and import as a module
 * drag&drop - many tables usage
 * show/unselect selected button
 * ctrl+a shortcut
-* custom search placeholder
 * ability to turn off pagination, selection etc.
 * loader when data are not accesable
 * custom comunicates "no data" etc. 
