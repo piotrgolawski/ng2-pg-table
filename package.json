@@ -1,26 +1,11 @@
 {
   "name": "ng2-pg-table",
   "version": "0.2.0",
-  "scripts": {
-    "build": "gulp build",
-    "build:watch": "gulp",
-    "prepublish": "tsc",
-    "docs": "npm run docs:build",
-    "docs:build": "compodoc -p tsconfig.json -n ng2-pg-table -d docs --hideGenerator",
-    "docs:serve": "npm run docs:build -- -s",
-    "docs:watch": "npm run docs:build -- -s -w",
-    "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
-    "lite": "lite-server",
-    "test": "tsc && karma start"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/piotrgolawski/ng2-pg-table"
+    "url": "git+https://github.com/piotrgolawski/ng2-pg-table.git"
   },
-  "author": {
-    "name": "Piotr Goławski",
-    "email": "piotr.golawski1990@gmail.com"
-  },
+  "author": "Piotr Goławski <piotr.golawski1990@gmail.com>",
   "keywords": [
     "angular"
   ],
@@ -71,5 +56,12 @@
   },
   "engines": {
     "node": ">=6.0.0"
+  },
+  "description": "At this moment of development it may be not wise to use in production. I will be thnakful for any comments about the code.",
+  "homepage": "https://github.com/piotrgolawski/ng2-pg-table#readme",
+  "main": "ng2-pg-table.component.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

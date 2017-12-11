@@ -27,7 +27,7 @@ export class TableUtils {
         return Math.floor((Math.random() * 10000) + 10000);
     }
 
-    public static getTableInnerConfig(tableId, floatingButtonsHolderId) {
+    public static getTableInnerConfig(tableId, floatingButtonsHolderId) : Object{
         let tableElement = document.getElementById(tableId);
         let tableButtonHolderElement = document.getElementById(floatingButtonsHolderId);
 
