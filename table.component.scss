@@ -3,12 +3,18 @@
   float: left;
   width: auto;
   padding: 5px;
+  border-collapse: collapse !important;
 }
 
 table-pagination {
   margin: auto;
   text-align: center;
   display: block;
+  cursor: default;
+}
+
+.pagination li {
+  cursor: pointer !important;
 }
 
 .glyphicon {
@@ -23,6 +29,10 @@ table-pagination {
   position: fixed;
   z-index: 99999;
   cursor: pointer !important;
+}
+
+.filter-clear-button {
+  padding: 0 4px !important;
 }
 
 .hovered {

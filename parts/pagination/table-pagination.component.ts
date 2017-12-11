@@ -37,9 +37,11 @@ export class TablePaginationComponent implements OnInit, OnChanges {
     }
 
     setPage(page: number) {
-        this.pager = this.pagerService.getPager(Object.keys(this.items).length, page, this.paginationLimit);
-        this.pagedItems = this.items.slice(this.pager.startIndex, this.pager.endIndex + 1);
+        if (this.items) {
+            this.pager = this.pagerService.getPager(Object.keys(this.items).length, page, this.paginationLimit);
+            this.pagedItems = this.items.slice(this.pager.startIndex, this.pager.endIndex + 1);
 
-        this.itemsPaged.emit(this.pagedItems);
+            this.itemsPaged.emit(this.pagedItems);
+        }
     }
 }

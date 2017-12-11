@@ -9,7 +9,6 @@ import { TablePaginationComponent } from './parts/pagination/table-pagination.co
 import { TableFilterComponent } from './parts/filter/table-filter.component';
 import { FormsModule } from '@angular/forms';
 import { TableFloatingMenuComponent } from './parts/row/floating_menu/table-floating-menu.component';
-import { TableCellComponent } from './parts/cell/table-cell.component';
 
 /**
  * Table generator for Angular 2-5
@@ -30,8 +29,7 @@ import { TableCellComponent } from './parts/cell/table-cell.component';
         TableRowComponent,
         TablePaginationComponent,
         TableFilterComponent,
-        TableFloatingMenuComponent,
-        TableCellComponent
+        TableFloatingMenuComponent
     ],
     providers: [
         TablePagerService,

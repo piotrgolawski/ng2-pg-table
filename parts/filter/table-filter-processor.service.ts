@@ -21,9 +21,8 @@ export class TableFilterProcessorService {
     public setSearchByObjectPath(objectPath, search) {
         if (objectPath) {
             TableFilterProcessorService.objectPathRelationList[objectPath] = search;
+            this.filterData()
         }
-
-        this.filterData()
     }
 
     public filterData() {
@@ -49,7 +48,7 @@ export class TableFilterProcessorService {
         this.tableBroadcaster.onTableFiltered(returnArray);
     }
 
-    public filterPassed(item, objectPath, search): boolean {
+    public filterPassed(item, objectPath, search) {
         if (!search) {
             return true;
         }

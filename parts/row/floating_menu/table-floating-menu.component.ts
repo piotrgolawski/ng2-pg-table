@@ -17,9 +17,11 @@ export class TableFloatingMenuComponent implements OnInit {
 
     ngOnInit(): void {
         let that = this;
-        this.components.forEach(function (component) {
-            that.getComponentByName(component)
-        })
+        if (this.components) {
+            this.components.forEach(function (component) {
+                that.getComponentByName(component)
+            })
+        }
     }
 
     public getComponentByName(component) {

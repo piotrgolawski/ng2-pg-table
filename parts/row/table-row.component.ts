@@ -1,6 +1,7 @@
-import { Component, forwardRef, HostListener, Inject, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, HostListener, Inject, Input, OnChanges, OnInit } from '@angular/core';
 import { TableBroadcaster } from '../../broadcast/table.broadcaster';
 import { Ng2PgTableComponent } from '../../ng2-pg-table.component';
+import { TableUtils } from '../../utils/table.utils';
 
 @Component({
     selector: '[table-row]',
@@ -12,6 +13,7 @@ export class TableRowComponent {
     @Input() floatingMenuId: string;
     @Input() item: string;
     @Input() tableNumber: string;
+    @Input() selectMode: string;
 
     public elementHtml;
 
@@ -25,6 +27,10 @@ export class TableRowComponent {
 
     @HostListener('click', ['$event'])
     onClick($event) {
+        if (!this.selectMode) {
+            return false;
+        }
+
         let rowElement = $event.target.parentElement;
         let isSelected = rowElement.classList.contains('selected');
 

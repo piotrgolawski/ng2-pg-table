@@ -29,4 +29,4 @@ simply copy-paste github repo and import as a module
 * ctrl+a shortcut
 * ability to turn off pagination, selection etc.
 * loader when data are not accesable
-* custom comunicates "no data" etc. 
+* custom communicates "no data" etc.

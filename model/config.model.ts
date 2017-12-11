@@ -14,5 +14,6 @@ export class Column {
 export class GlobalSettings {
     public filterPlaceholder: string;
     public paginationLimit = 10;
-    public multiSelect = false;
+    public select = null; // false, multi, single
+    public noDataMessage: string;
 }

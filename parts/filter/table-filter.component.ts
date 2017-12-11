@@ -5,7 +5,8 @@ import { TableBroadcaster } from "../../broadcast/table.broadcaster";
 @Component({
     selector: '[table-search]',
     templateUrl: './table-filter.component.html',
-    providers: [TableFilterProcessorService]
+    providers: [ TableFilterProcessorService ],
+    styleUrls: ['../../table.component.scss']
 })
 export class TableFilterComponent {
     @Input() tableBroadcaster: TableBroadcaster;
