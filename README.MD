@@ -16,11 +16,6 @@ At this moment of development it may be not wise to use in production. I will be
 #### npm 
 npm install ng2-pg-table
 
-#### as module
-simply copy-paste github repo and import as a module
-
-
-
 
 ### TODO
 
