@@ -1,0 +1,28 @@
+{
+  "name": "ng2-pg-table",
+  "version": "0.4.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piotrgolawski/ng2-pg-table"
+  },
+  "author": {
+    "name": "Piotr",
+    "email": "piotr.golawski1990@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/piotrgolawski/ng2-pg-table/issues"
+  },
+  "main": "ng2-pg-table.umd.js",
+  "module": "ng2-pg-table.js",
+  "jsnext:main": "ng2-pg-table.js",
+  "typings": "index.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}

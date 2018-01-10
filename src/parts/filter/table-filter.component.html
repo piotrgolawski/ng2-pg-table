@@ -1,0 +1,4 @@
+<div class="input-group">
+    <input class="form-control" placeholder="{{filterPlaceholder}}" [(ngModel)]="search" (ngModelChange)="filterData($event)">
+    <div class="input-group-addon filter-clear-button" style="cursor: pointer;" (click)="clearFilter()"><i class="glyphicon glyphicon-remove"></i></div>
+</div>
