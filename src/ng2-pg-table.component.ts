@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
 import { TableUtils } from './utils/table.utils';
 import { TableBroadcaster } from './broadcast/table.broadcaster';
 import { Config } from './model/config.model';

@@ -10,7 +10,7 @@
         </tr>
     </thead>
 
-    <tbody *ngIf="dataCanBeShown()" (mouseleave)="hideFloatingMenu()">
+    <tbody [hidden]="!dataCanBeShown()" (mouseleave)="hideFloatingMenu()">
         <tr table-row *ngFor="let entity of dataToShow" [tableNumber]="tableNumber" [item]="entity" [class.selected]="entity['selected']" [tableBroadcaster]="tableBroadcaster" [floatingMenuId]="floatingMenuId" [selectMode]="config.globalSettings.select">
             <td *ngFor="let column of config.columns">{{getProperty(entity, column.objectPath)}}</td>
         </tr>
@@ -21,8 +21,8 @@
 
     <tfoot>
         <tr>
-            <td [attr.colspan]="config.columns.length">
-                <span [hidden]="dataCanBeShown()">{{config.globalSettings.noDataMessage}}</span>
+            <td  [attr.colspan]="config && config.columns && config.columns.length">
+                <span [hidden]="dataCanBeShown()" *ngIf="config && config.globalSettings && config.globalSettings.noDataMessage">{{config.globalSettings.noDataMessage}}</span>
                 <table-pagination (itemsPaged)="updateDataToShow($event)" [items]="data" [paginationLimit]="paginationLimit" [tableBroadcaster]="tableBroadcaster"></table-pagination>
             </td>
         </tr>

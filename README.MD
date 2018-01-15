@@ -117,5 +117,5 @@ export class TestButtonComponent implements OnInit {
 
 
 
-##### Thank you very much for npm package generator
+##### Thanks very much for npm package generator
 https://github.com/jvandemo/generator-angular2-library
