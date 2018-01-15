@@ -1,5 +1,5 @@
 ## Simple Angular 2+ table module
-At this moment of development it may be not wise to use in production. I will be thnakful for any comments about the code.
+At this moment of development it may be not wise to use in production. I will be thankful for any comments about the code.
 
 
 ### Functions 
