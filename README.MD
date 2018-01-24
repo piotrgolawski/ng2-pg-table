@@ -105,6 +105,7 @@ export class TestButtonComponent implements OnInit {
 
 ### TODO
 
+* CSS classes for columns
 * drag&drop - many tables usage
 * show/unselect selected button
 * ctrl+a shortcut
