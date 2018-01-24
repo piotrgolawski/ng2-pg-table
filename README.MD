@@ -110,7 +110,8 @@ export class TestButtonComponent implements OnInit {
 * ctrl+a shortcut
 * ability to turn off pagination, selection etc.
 * loader when data are not accesable
-* custom communicates "no data" etc.
+* html column type
+* list filter
 
 
 
