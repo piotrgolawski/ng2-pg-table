@@ -1,4 +1,4 @@
-## Simple Angular 2+ table module
+## Simple Angular 2+ table generator
 At this moment of development it may be not wise to use in production. I will be thankful for any comments about the code.
 
 
