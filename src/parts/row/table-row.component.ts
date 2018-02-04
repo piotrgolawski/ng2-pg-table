@@ -1,7 +1,7 @@
 import { Component, forwardRef, HostListener, Inject, Input } from '@angular/core';
 import { TableBroadcaster } from '../../broadcast/table.broadcaster';
 import { Ng2PgTableComponent } from '../../ng2-pg-table.component';
-import { TableUtils } from '../../../dist/utils/table.utils';
+import { TableUtils } from '../../utils/table.utils';
 
 @Component({
     selector: '[table-row]',
