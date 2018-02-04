@@ -1,4 +1,4 @@
-import { Component, forwardRef, HostListener, Inject, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, forwardRef, HostListener, Inject, Input } from '@angular/core';
 import { TableBroadcaster } from '../../broadcast/table.broadcaster';
 import { Ng2PgTableComponent } from '../../ng2-pg-table.component';
 import { TableUtils } from '../../utils/table.utils';
@@ -19,8 +19,8 @@ export class TableRowComponent {
 
     @HostListener('mouseover', ['$event'])
     onMouseEnter($event) {
-        this.elementHtml = $event.target.parentElement;
-        this.item['htmlElement'] = this.elementHtml;
+        this.elementHtml = TableUtils.findParentElement($event.target, 'TR', 3);
+        this.item['htmlElement'] = TableUtils.findParentElement($event.target, 'TD', 3);
         this.setProperButtonsPosition();
         this.tableBroadcaster.onMouseOverRow(this.item);
     }
@@ -31,7 +31,7 @@ export class TableRowComponent {
             return false;
         }
 
-        let rowElement = $event.target.parentElement;
+        let rowElement = TableUtils.findParentElement($event.target, 'TR', 3);
         let isSelected = rowElement.classList.contains('selected');
 
         this.item['htmlElement'] = rowElement;

@@ -1,9 +1,9 @@
 .ng2-pg-table {
+  border-collapse: collapse !important;
+  height: 100%;
   display: inline-block;
   float: left;
   width: auto;
-  padding: 5px;
-  border-collapse: collapse !important;
 }
 
 table-pagination {

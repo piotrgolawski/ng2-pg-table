@@ -82,4 +82,26 @@ export class TableUtils {
         return 'floatingMenu_' + tableNumber;
     }
 
+    public static findParentElement(element, searchElement, maxDepth) {
+        if (typeof element.closest === 'function') {
+            return element.closest(searchElement) || null;
+        }
+
+        while (element) {
+            if (maxDepth <= 0) {
+                break;
+            }
+
+            maxDepth--;
+
+            if (element.matches(searchElement)) {
+                return element;
+            }
+
+            element = element.parentElement;
+        }
+
+        return null;
+    }
+
 }

@@ -12,7 +12,7 @@
 
     <tbody [hidden]="!dataCanBeShown()" (mouseleave)="hideFloatingMenu()">
         <tr table-row *ngFor="let entity of dataToShow" [tableNumber]="tableNumber" [item]="entity" [class.selected]="entity['selected']" [tableBroadcaster]="tableBroadcaster" [floatingMenuId]="floatingMenuId" [selectMode]="config.globalSettings.select">
-            <td *ngFor="let column of config.columns">{{getProperty(entity, column.objectPath)}}</td>
+            <td *ngFor="let column of config.columns"><div>{{getProperty(entity, column.objectPath)}}</div></td>
         </tr>
         <tr style="display: block;">
             <table-floating-menu class="table-floating-menu" [id]="floatingMenuId" [components]="config.floatingButtonsComponents" [tableBroadcaster]="tableBroadcaster"></table-floating-menu>
