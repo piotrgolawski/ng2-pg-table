@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 var core_1 = require("@angular/core");
 var table_utils_1 = require("../../utils/table.utils");
-var TableFilterProcessorService = (function () {
+var TableFilterProcessorService = /** @class */ (function () {
     function TableFilterProcessorService() {
     }
     TableFilterProcessorService_1 = TableFilterProcessorService;
@@ -51,7 +51,8 @@ var TableFilterProcessorService = (function () {
         }
         var objVariable = table_utils_1.TableUtils.getObjectPropertyByObjectPath(item, objectPath);
         if (objVariable) {
-            if (objVariable.toString().toLowerCase().indexOf(search.toLowerCase()) > -1) {
+            objVariable = objVariable.toString().replace(/<\/?[^>]+(>|$)/g, '').toLowerCase();
+            if (objVariable.indexOf(search.toLowerCase()) > -1) {
                 return true;
             }
         }

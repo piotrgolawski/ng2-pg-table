@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 var core_1 = require("@angular/core");
 var rxjs_1 = require("rxjs");
-var TableBroadcaster = (function () {
+var TableBroadcaster = /** @class */ (function () {
     function TableBroadcaster() {
         this.tableFiltered = new rxjs_1.Subject();
         this.clearOrder = new rxjs_1.Subject();

@@ -4,9 +4,9 @@ import { TableBroadcaster } from '../../broadcast/table.broadcaster';
 
 @Injectable()
 export class TableFilterProcessorService {
+    static objectPathRelationList = {};
     private tableBroadcaster: TableBroadcaster;
     private items: Object[];
-    static objectPathRelationList = {};
 
     public setItems(items) {
         this.items = items;
@@ -55,7 +55,8 @@ export class TableFilterProcessorService {
 
         let objVariable = TableUtils.getObjectPropertyByObjectPath(item, objectPath);
         if (objVariable) {
-            if (objVariable.toString().toLowerCase().indexOf(search.toLowerCase()) > -1) {
+            objVariable = objVariable.toString().replace(/<\/?[^>]+(>|$)/g, '').toLowerCase();
+            if (objVariable.indexOf(search.toLowerCase()) > -1) {
                 return true;
             }
         }

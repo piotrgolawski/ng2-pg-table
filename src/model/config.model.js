@@ -1,18 +1,18 @@
 "use strict";
 exports.__esModule = true;
-var Config = (function () {
+var Config = /** @class */ (function () {
     function Config() {
     }
     return Config;
 }());
 exports.Config = Config;
-var Column = (function () {
+var Column = /** @class */ (function () {
     function Column() {
     }
     return Column;
 }());
 exports.Column = Column;
-var GlobalSettings = (function () {
+var GlobalSettings = /** @class */ (function () {
     function GlobalSettings() {
         this.paginationLimit = 10;
         this.select = null; // false, multi, single

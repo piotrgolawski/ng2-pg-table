@@ -11,13 +11,14 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 exports.__esModule = true;
 var core_1 = require("@angular/core");
 var ng2_pg_table_component_1 = require("../../ng2-pg-table.component");
-var TableRowComponent = (function () {
+var table_utils_1 = require("../../utils/table.utils");
+var TableRowComponent = /** @class */ (function () {
     function TableRowComponent(parent) {
         this.parent = parent;
     }
     TableRowComponent.prototype.onMouseEnter = function ($event) {
-        this.elementHtml = $event.target.parentElement;
-        this.item['htmlElement'] = this.elementHtml;
+        this.elementHtml = table_utils_1.TableUtils.findParentElement($event.target, 'TR', 3);
+        this.item['htmlElement'] = table_utils_1.TableUtils.findParentElement($event.target, 'TD', 3);
         this.setProperButtonsPosition();
         this.tableBroadcaster.onMouseOverRow(this.item);
     };
@@ -25,7 +26,7 @@ var TableRowComponent = (function () {
         if (!this.selectMode) {
             return false;
         }
-        var rowElement = $event.target.parentElement;
+        var rowElement = table_utils_1.TableUtils.findParentElement($event.target, 'TR', 3);
         var isSelected = rowElement.classList.contains('selected');
         this.item['htmlElement'] = rowElement;
         this.item['selected'] = !isSelected;

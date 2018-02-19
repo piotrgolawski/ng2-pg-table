@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 var core_1 = require("@angular/core");
-var TablePaginationComponent = (function () {
+var TablePaginationComponent = /** @class */ (function () {
     function TablePaginationComponent(pagerService) {
         this.pagerService = pagerService;
         this.itemsPaged = new core_1.EventEmitter();

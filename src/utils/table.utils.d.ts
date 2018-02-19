@@ -7,4 +7,5 @@ export declare class TableUtils {
     static compareObjects(o1: any, o2: any): boolean;
     static getTableName(tableNumber: number): string;
     static getFloatingMenuName(tableNumber: number): string;
+    static findParentElement(element: any, searchElement: any, maxDepth: any): any;
 }

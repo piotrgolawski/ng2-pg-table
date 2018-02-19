@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 var core_1 = require("@angular/core");
 var table_utils_1 = require("../../utils/table.utils");
-var TableSortProcessorService = (function () {
+var TableSortProcessorService = /** @class */ (function () {
     function TableSortProcessorService() {
     }
     TableSortProcessorService.prototype.setItems = function (items) {

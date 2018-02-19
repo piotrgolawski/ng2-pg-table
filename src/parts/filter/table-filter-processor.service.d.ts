@@ -1,7 +1,7 @@
 export declare class TableFilterProcessorService {
+    static objectPathRelationList: {};
     private tableBroadcaster;
     private items;
-    static objectPathRelationList: {};
     setItems(items: any): void;
     setTableBroadcaster(tableBroadcaster: any): void;
     setSearchByObjectPath(objectPath: any, search: any): void;

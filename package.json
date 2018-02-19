@@ -1,6 +1,5 @@
 {
   "name": "ng2-pg-table",
-  "version": "0.4.0",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",

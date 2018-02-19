@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 var core_1 = require("@angular/core");
 var table_filter_processor_service_1 = require("./table-filter-processor.service");
-var TableFilterComponent = (function () {
+var TableFilterComponent = /** @class */ (function () {
     function TableFilterComponent(tableFilterProcessorService) {
         this.tableFilterProcessorService = tableFilterProcessorService;
     }

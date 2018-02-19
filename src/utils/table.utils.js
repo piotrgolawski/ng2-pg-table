@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-var TableUtils = (function () {
+var TableUtils = /** @class */ (function () {
     function TableUtils() {
     }
     TableUtils.getObjectPropertyByObjectPath = function (obj, prop) {
@@ -71,6 +71,22 @@ var TableUtils = (function () {
     };
     TableUtils.getFloatingMenuName = function (tableNumber) {
         return 'floatingMenu_' + tableNumber;
+    };
+    TableUtils.findParentElement = function (element, searchElement, maxDepth) {
+        if (typeof element.closest === 'function') {
+            return element.closest(searchElement) || null;
+        }
+        while (element) {
+            if (maxDepth <= 0) {
+                break;
+            }
+            maxDepth--;
+            if (element.matches(searchElement)) {
+                return element;
+            }
+            element = element.parentElement;
+        }
+        return null;
     };
     return TableUtils;
 }());

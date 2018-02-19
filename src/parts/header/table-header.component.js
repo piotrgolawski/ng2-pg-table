@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 var core_1 = require("@angular/core");
 var table_sort_processor_service_1 = require("./table-sort-processor.service");
-var TableHeaderComponent = (function () {
+var TableHeaderComponent = /** @class */ (function () {
     function TableHeaderComponent(tableSortProcessorService) {
         this.tableSortProcessorService = tableSortProcessorService;
         this.orderState = null;
