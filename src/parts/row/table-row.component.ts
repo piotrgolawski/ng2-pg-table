@@ -1,7 +1,6 @@
 import { Component, forwardRef, HostListener, Inject, Input } from '@angular/core';
 import { TableBroadcaster } from '../../broadcast/table.broadcaster';
 import { Ng2PgTableComponent } from '../../ng2-pg-table.component';
-import { TableUtils } from '../../utils/table.utils';
 
 @Component({
     selector: '[table-row]',
@@ -19,8 +18,8 @@ export class TableRowComponent {
 
     @HostListener('mouseover', ['$event'])
     onMouseEnter($event) {
-        this.elementHtml = TableUtils.findParentElement($event.target, 'TR', 3);
-        this.item['htmlElement'] = TableUtils.findParentElement($event.target, 'TD', 3);
+        this.elementHtml = $event.target.closest('TR');
+        this.item['htmlElement'] = $event.target.closest('TD');
         this.setProperButtonsPosition();
         this.tableBroadcaster.onMouseOverRow(this.item);
     }
@@ -31,7 +30,7 @@ export class TableRowComponent {
             return false;
         }
 
-        let rowElement = TableUtils.findParentElement($event.target, 'TR', 3);
+        let rowElement = $event.target.closest('TR');
         let isSelected = rowElement.classList.contains('selected');
 
         this.item['htmlElement'] = rowElement;
@@ -51,15 +50,17 @@ export class TableRowComponent {
     public setProperButtonsPosition() {
         this.clearAllHoveredElements();
         this.elementHtml.classList.add('hovered');
-        let innerConfig = this.parent.innerConfig;
+        let table = this.elementHtml.closest('TABLE');
+        let tableButtonHolderElement = document.getElementById(this.floatingMenuId);
 
-        let left = innerConfig.tableDistanceLeft + (innerConfig.tableWidth / 2) - (innerConfig.tableButtonHolderElementWidth / 2);
-        let top = this.elementHtml.getClientRects().item(0).top - (innerConfig.tableButtonHolderElementHeight / 2);
+        tableButtonHolderElement.style.display = 'inline';
+        tableButtonHolderElement.style.position = 'absolute';
 
-        let floatingMenu = document.getElementById(this.floatingMenuId);
-        floatingMenu.style.display = 'inline';
-        floatingMenu.style.left = left + 'px';
-        floatingMenu.style.top = top + 'px';
+        let left = table.offsetLeft + this.elementHtml.offsetLeft + ((this.elementHtml.clientWidth / 2) - tableButtonHolderElement.clientWidth / 2) ;
+        let top = table.offsetTop + this.elementHtml.offsetTop + (this.elementHtml.clientHeight * (70 / 100));
+
+        tableButtonHolderElement.style.left = left + 'px';
+        tableButtonHolderElement.style.top = top + 'px';
     }
 
     private clearAllHoveredElements(): void {

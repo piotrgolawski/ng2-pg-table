@@ -29,23 +29,6 @@ export class TableUtils {
         return Math.floor((Math.random() * 10000) + 10000);
     }
 
-    public static getTableInnerConfig(tableId, floatingButtonsHolderId) : Object{
-        let tableElement = document.getElementById(tableId);
-        let tableButtonHolderElement = document.getElementById(floatingButtonsHolderId);
-
-        if (tableElement && tableButtonHolderElement) {
-            return {
-                tableId: tableId,
-                tableDistanceLeft: tableElement.offsetLeft - tableElement.scrollLeft,
-                tableButtonHolderElementWidth: tableButtonHolderElement.clientWidth,
-                tableButtonHolderElementHeight: tableButtonHolderElement.clientHeight,
-                tableWidth: tableElement.clientWidth,
-            };
-        }
-
-        return {};
-    }
-
     public static compareObjectsWithExclude(o1, o2, exclude) {
         for (let p in o1) {
             if (o1.hasOwnProperty(p)) {

@@ -19,8 +19,6 @@ export class Ng2PgTableComponent implements OnInit, AfterViewInit, OnChanges, Af
     tableId = TableUtils.getTableName(this.tableNumber);
     floatingMenuId = TableUtils.getFloatingMenuName(this.tableNumber);
 
-    innerConfig;
-
     localDataCopy: Object[];
     dataToShow: Object[];
 
@@ -45,7 +43,6 @@ export class Ng2PgTableComponent implements OnInit, AfterViewInit, OnChanges, Af
     }
 
     ngAfterViewInit(): void {
-        this.innerConfig = TableUtils.getTableInnerConfig(this.tableId, this.floatingMenuId);
         this.hideFloatingMenu();
     }
 
@@ -129,7 +126,6 @@ export class Ng2PgTableComponent implements OnInit, AfterViewInit, OnChanges, Af
             });
     }
 
-    // TODO this method should not be here?
     public getProperty(item, objectPath) {
         if (item) {
             let value = TableUtils.getObjectPropertyByObjectPath(item, objectPath);

@@ -20,14 +20,14 @@ npm install ng2-pg-table
 
 ##### Html
 
-```
+```html
 <ng2-pg-table [config]="config" [data]="data"></ng2-pg-table>
 
 ```
 
 
 ##### Config
-```
+```typescript
 config = {
         columns: [
             {
@@ -53,7 +53,7 @@ config = {
 ```
 
 ##### Data
-```
+```typescript
 data = [
         {id: 1, bank: {name: 'Somenicebank', address: 'Someplace 321', manager: { name: 'Don Johnson', telephone: '500500500' }}},
         {id: 2, bank: {name: 'Somenicebank too', address: 'Anotherplace 1b/3', manager: { name: 'Steven Seagal', telephone: '666555444'}}},
@@ -62,9 +62,9 @@ data = [
 ```
 
 ##### Floating button component
-```
+```typescript
 import { Component, Input, OnInit } from '@angular/core';
-import { TableBroadcaster } from 'ng2-pg-table';
+import { TableBroadcaster } from 'ng2-pg-table/broadcast/table.broadcaster';
 
 @Component({
     selector: 'test-button',
@@ -103,20 +103,23 @@ export class TestButtonComponent implements OnInit {
 ```
 
 
+#####Styling 
+
+```css
+
+:host /deep/ .ng2-pg-table tr {
+    background: azure;
+}
+
+```
+
+
 ### TODO
 
-* CSS classes for columns
 * drag&drop - many tables usage
 * show/unselect selected button
-* ctrl+a shortcut
 * ability to turn off pagination, selection etc.
-* loader when data are not accesable
-* html column type
-* list filter
-
-
-
-
+* custom component filters
 
 
 ##### Thanks very much for npm package generator
