@@ -1,5 +1,10 @@
 ## Simple Angular 2+ table generator
-At this moment of development it may be not wise to use in production. I will be thankful for any comments about the code.
+Use on production at your own responsibility, beta stage.
+
+
+<p align="center">
+        <img src="https://github.com/piotrgolawski/ng2-pg-table/blob/master/overview.gif?raw=true">
+</p>
 
 
 ### Functions 
@@ -103,7 +108,7 @@ export class TestButtonComponent implements OnInit {
 ```
 
 
-#####Styling 
+##### Styling 
 
 ```css
 
