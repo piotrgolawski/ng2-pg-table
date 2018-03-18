@@ -52,7 +52,7 @@ config = {
         globalSettings: {
             filterPlaceholder: 'search',
             paginationLimit: 10,
-            multiSelect: false
+            select: false // false, multi, single
         }
     };
 ```
